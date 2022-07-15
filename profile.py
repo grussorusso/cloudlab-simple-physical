@@ -52,7 +52,7 @@ for i in range(1, params.clientCount+1):
     if params.phystype != "":
         node.hardware_type = params.phystype
     if params.localStorage != 0:
-	    bsName="bs"+str(i)
+        bsName="bs"+str(i)
         bs = node.Blockstore(bsName, "/mydata")
         bs.size=str(params.localStorage)+"GB"
 
