@@ -38,7 +38,7 @@ pc.defineParameter("localStorage", "Extra local storage in GB",
 params = pc.bindParameters()
 
 # The NFS network. All these options are required.
-nfsLan = request.LAN(nfsLanName)
+nfsLan = request.LAN("myLan")
 nfsLan.best_effort       = True
 nfsLan.vlan_tagging      = True
 nfsLan.link_multiplexing = True
