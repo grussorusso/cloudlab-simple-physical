@@ -51,15 +51,10 @@ for i in range(1, params.clientCount+1):
     nfsLan.addInterface(node.addInterface())
     if params.phystype != "":
         node.hardware_type = params.phystype
-        pass
-    if params["node"+str(i)] != "":
-	node.disk_image=params["node"+str(i)]
-        pass
     if params.localStorage != 0:
-	bsName="bs"+str(i)
+	    bsName="bs"+str(i)
         bs = node.Blockstore(bsName, "/mydata")
         bs.size=str(params.localStorage)+"GB"
-    pass
 
 
 # Print the RSpec to the enclosing page.
