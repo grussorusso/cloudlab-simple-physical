@@ -30,7 +30,7 @@ pc.defineParameter("phystype",  "Optional physical node type",
                    "instead of letting the resource mapper choose for you.")
 
 pc.defineParameter("localStorage", "Extra local storage in GB",
-                   portal.ParameterType.INTEGER, 0)
+                   portal.ParameterType.INTEGER, 20)
 
 
 
@@ -53,7 +53,7 @@ for i in range(1, params.clientCount+1):
         node.hardware_type = params.phystype
     if params.localStorage != 0:
         bsName="bs"+str(i)
-        bs = node.Blockstore(bsName, "/mydata")
+        bs = node.Blockstore(bsName, "/var/lib/libvirt/images")
         bs.size=str(params.localStorage)+"GB"
 
 
